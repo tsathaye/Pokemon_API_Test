@@ -1,26 +1,26 @@
 package step_definitions;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
-
-import java.time.LocalDateTime;
-
 
 public class Hooks {
+
+    public static RequestSpecBuilder builder;
+    public static RequestSpecification reqspec;
 
 
     @Before("@Test")
     /*
      Setup REST-Assured to work with the P&B API using ReqSpecBuilder
      */
-    public void setup() {
-
+    public RequestSpecification setup() {
+        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
+        builder = new RequestSpecBuilder();
+        builder.setBaseUri ("https://pokeapi.co/api/v2/berry/");
+        reqspec =  builder.build();
+        return reqspec;
     }
 
 }
