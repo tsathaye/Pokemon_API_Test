@@ -18,7 +18,7 @@ public class Hooks {
     public RequestSpecification setup() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         builder = new RequestSpecBuilder();
-        builder.setBaseUri ("https://pokeapi.co/api/v2/berry/");
+        builder.setBaseUri ("https://pokeapi.co/api/v2/berrvy/");
         reqspec =  builder.build();
         return reqspec;
     }
