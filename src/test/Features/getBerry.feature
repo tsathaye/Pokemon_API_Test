@@ -20,7 +20,8 @@ Feature: Get Berry : Verify that you can access the Pokemon Berry API
       | 5     | 200       | aspear-berry   | 50   |
       | 11    | 200       | figy-berry     | 100  |
       | 16    | 200       | razz-berry     | 120  |
-      | aa    | 404       | non            | 0    |
+      | aa    | 403       | non            | 0    |
+      | @@    | 404       | non            | 0    |
       | 9999  | 404       | non            | 0    |
 
   #This is an exhaustive Automated Test
